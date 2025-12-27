@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Fest 2025 - Interactive Presentation</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  /* --- Presentation Container --- */
+  .slides {
+    display: flex;
+    overflow-x: scroll;
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-type: x mandatory;
+  }
+
+  /* --- Each Slide --- */
+  .slide {
+    scroll-snap-align: start;
+    flex: 0 0 100%;
+    height: 100vh;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .slide img, .slide video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+    z-index: -1;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease both;
+  }
+
+  p, li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    animation: fadeInUp 1.2s ease both;
+  }
+
+  /* --- Team Section --- */
+  .team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    animation: zoomIn 1.5s ease both;
+  }
+
+  .member {
+    background: rgba(255,255,255,0.1);
+    padding: 20px 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+    transition: transform 0.3s, background 0.3s;
+    width: 240px;
+  }
+
+  .member:hover {
+    transform: translateY(-10px) scale(1.05);
+    background: rgba(255,255,255,0.2);
+  }
+
+  .member h3 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
+
+  .member p {
+    font-size: 0.95rem;
+    color: #ddd;
+  }
+
+  /* --- Animations --- */
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* --- Navigation Dots (CSS only) --- */
+  .nav-dots {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+  }
+
+  .nav-dots a {
+    width: 15px;
+    height: 15px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.3s;
+  }
+
+  .nav-dots a:hover {
+    background: white;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    .member { width: 180px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Slides Container -->
+<div class="slides">
+
+  <!-- Slide 1: Team Intro -->
+  <section class="slide" id="slide1">
+    <img src="https://i.pinimg.com/736x/ec/2d/a7/ec2da735666f1c1b6bf6f00aeec15a28.jpg" alt="Team">
+    <h1>👥 Team Members</h1>
+    <p>Each member contributed to design, functionality, and innovation.</p>
+    
+    <div class="team">
+      
+     
+      
+         <div class="member">
+        <h3>Pratham Sharma</h3>
+        <p>HTML & CSS Developer</p>
+      </div>
+      <div class="member">
+        <h3>Preetam Knowar</h3>
+        <p>Team Leader</p>
+      </div>
+   
+      <div class="member">
+        <h3>Harsh Kumar</h3>
+        <p>AI & CSS Modification Lead</p>
+      </div>
+      <div class="member">
+        <h3>Ayush Aryan</h3>
+        <p>HTML & CSS Developer</p>
+      </div>
+       <div class="member">
+        <h3>Kanishk Shankar</h3>
+        <p>Online Resources Manager</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 2: Problem Statement -->
+  <section class="slide" id="slide2">
+    <img src="https://i.pinimg.com/736x/12/62/83/1262831466d100484ca3a92ea4fc4b36.jpg" alt="Problem">
+    <h1>🧩 Problem Statement</h1>
+    <p><strong>Hackathons are fragmented</strong> across multiple sites, making it difficult for students to find, register, and collaborate.</p>
+    <br>
+    <h1>💡 Our Solution</h1>
+    <p>A centralized platform that hosts national and international hackathons in one place — simplifying participation and management.</p>
+    <br>
+    <h1>🎯 Why It Matters</h1>
+    <p>We’re solving discovery and accessibility challenges for students by connecting global opportunities on a single tech fest website.</p>
+  </section>
+
+  <!-- Slide 3: Website Demo -->
+  <section class="slide" id="slide3">
+    <img src="https://i.pinimg.com/736x/ea/a9/df/eaa9dff162a49db71b909670ff17654b.jpg" alt="problem" >
+    <h1>🌐 Live Demo</h1>
+    <p>Showcasing the homepage with background image  and interactive UI.</p>
+    <br>
+    <h1>✨ Key Features</h1>
+    <ul style="text-align:left; max-width:600px; margin-top:15px;">
+      <li>• Hackathon Listings (National & International)</li>
+      <li>• Registration & Team Management</li>
+      <li>• Responsive UI built with HTML, CSS, and advanced animations</li>
+      <li>• Modern design with smooth transitions and hover effects</li>
+    </ul>
+    <br>
+    <h1>🎨 Design Choices</h1>
+    <p>Focus on modern, tech-inspired aesthetics to reflect innovation and collaboration.</p>
+  </section>
+
+
+  <section class="slide" id="slide4">
+    <img src="https://i.pinimg.com/736x/76/fa/a3/76faa3d2444b0471e2ddf9cc5a028581.jpg" alt="problem">
+    <h1> project overview</h1>
+    <p>
+
+
+    </p>
+
+  </section>
+
+  <!-- Slide 6: Thank You -->
+  <section class="slide" id="slide4">
+    <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1" alt="Thank You">
+    <h1>🙏 Thank You!</h1>
+    <p>Any questions? We're excited to showcase our work! 💬</p>
+  </section>
+
+</div>
+
+<!-- Navigation Dots -->
+<div class="nav-dots">
+  <a href="#slide1"></a>
+  <a href="#slide2"></a>
+  <a href="#slide3"></a>
+  <a href="#slide4"></a>
+</div>
+
+</body>
+</html>
